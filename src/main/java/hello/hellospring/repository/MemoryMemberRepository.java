@@ -44,4 +44,8 @@ public class MemoryMemberRepository implements MemberRepository{
         // store는 Map인데 리턴타입이 List이기 때문에 
         // new ArrayList로 만들어줌
     }
+
+    public void clearStore() {
+        store.clear();
+    }
 }
