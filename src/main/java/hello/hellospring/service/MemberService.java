@@ -10,9 +10,15 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-
     // 회원 가입
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        // MemberService 입장에서 보면 외부에서 리파지토리를 넣어줌
+        // 이런게 바로 Dependency Injection
+        this.memberRepository = memberRepository;
+    }
+
     public Long join(Member member) {
         // 같은 이름이 있는 중복 회원 X
 //        Optional<Member> result = memberRepository.findByName(member.getName());
