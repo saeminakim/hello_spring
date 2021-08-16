@@ -5,6 +5,7 @@ import hello.hellospring.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.*;
 
 // 다른 데서 사용할 코드가 아니기 때문에 굳이 public 안해도 됨
+@Repository
 class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
