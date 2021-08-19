@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <form action="/members/new" method="post">
+    <!-- action에 정의된 url로, "post" 방식으로 아래 폼을 보내줌 -->
+    <!-- 그럼 MemberController에 PostMappring된 함수가 실행됨 -->
+        <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+        </div>
+        <button type="submit">등록</button> </form>
+</div> <!-- /container -->
+</body>
+</html>
