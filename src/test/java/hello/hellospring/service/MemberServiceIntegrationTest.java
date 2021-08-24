@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
-@Transactional // 테스트 케이스에 달면 테스트 끝나면 roll back 해줌!! 
+@Transactional // 테스트 케이스에 달면 테스트 끝나면 roll back 해줌!!
 class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
@@ -53,11 +53,4 @@ class MemberServiceIntegrationTest {
 
     }
 
-    @Test
-    void findMembers() {
-    }
-
-    @Test
-    void findOne() {
-    }
 }
