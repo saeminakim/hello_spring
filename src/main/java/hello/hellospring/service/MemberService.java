@@ -40,21 +40,10 @@ public class MemberService {
 //            });
         // 이런 내용은 메소드로 따로 뽑는게 좋음!
 
-        long start = System.currentTimeMillis();
-
-        try {
-            // 중복 회원 검증
             validateDuplicateMember(member);
 
             memberRepository.save(member);
             return member.getId();
-        } finally {
-            long finish = System.currentTimeMillis();
-            long timeMS = finish - start;
-            System.out.println("join " + timeMS + "ms");
-        }
-
-
     }
 
     private void validateDuplicateMember(Member member) {
@@ -66,15 +55,7 @@ public class MemberService {
 
     // 전체 회원 조회
     public List<Member> findMembers() {
-        long start = System.currentTimeMillis();
-
-        try {
             return memberRepository.findAll();
-        } finally {
-            long finish = System.currentTimeMillis();
-            long timeMS = finish - start;
-            System.out.println("findMembers " + timeMS + "ms");
-        }
     }
 
     public Optional<Member> findOne(Long memberId) {
